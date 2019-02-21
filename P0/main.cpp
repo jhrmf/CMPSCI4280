@@ -49,6 +49,7 @@ int main(int argc, char* argv[]) {
 	while(n!=individuals.size()){
 		if(individuals.at(i) == individuals.at(n)){
 			individuals.erase(individuals.begin() + n);
+			n--;
 		}	
 		n++;
 	}
