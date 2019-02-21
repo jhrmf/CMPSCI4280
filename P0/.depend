@@ -1,0 +1,2 @@
+main.o: main.cpp node.h tree.h
+tree.o: tree.cpp node.h
