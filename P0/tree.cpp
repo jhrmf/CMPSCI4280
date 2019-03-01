@@ -1,6 +1,5 @@
 #include "tree.h"
 
-
 std::string printInorder(struct Node *root, int depth);
 std::string printPreorder(struct Node *root, int depth);
 std::string printPostorder(struct Node *root, int depth);
@@ -62,7 +61,7 @@ void printPreorder(struct Node *root, int depth, int check){
 }
 
 void printPostorder(struct Node *root, int depth, int check){
-    
+
         ofstream userfile((ogname + ".postorder").c_str());
 
     if(root != NULL){
