@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string>
 #include <fstream>
-using namespace std;
+
 static std::string ogname;
 
 struct Node{
@@ -20,9 +20,9 @@ struct Node{
 
 struct Node *createTree(std::string value);
 struct Node *insert(struct Node *root, std::string value);
-void printInorder(struct Node *root, int depth, int check);
-void printPreorder(struct Node *root, int depth, int check);
-void printPostorder(struct Node *root, int depth, int check);
+void printInorder(struct Node *root, int depth);
+void printPreorder(struct Node *root, int depth);
+void printPostorder(struct Node *root, int depth);
 void combineValues(std::string individuals);
 struct Node *buildTree(std::string filename);
 #endif

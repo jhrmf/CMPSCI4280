@@ -1,12 +1,8 @@
 #include "tree.h"
 
-std::string printInorder(struct Node *root, int depth);
-std::string printPreorder(struct Node *root, int depth);
-std::string printPostorder(struct Node *root, int depth);
-
-using namespace std;
 std::string inOrder, preOrder, postOrder;
 
+using namespace std;
 
 struct Node *createTree(std::string data){
     struct Node *temp = new Node();
@@ -34,39 +30,39 @@ struct Node *insert(struct Node *root, std::string value){
 
 }
 
-void printInorder(struct Node *root, int depth, int check) {
+void printInorder(struct Node *root, int depth) {
 
     ofstream userfile((ogname + ".inorder").c_str());
 
     if(root != NULL){
-        printInorder(root->left, depth+1, 1);
+        printInorder(root->left, depth+1);
         inOrder += string(2*(depth), '-') + root->data + "\n";
-        printInorder(root->right, depth+1, 1);
+        printInorder(root->right, depth+1);
     }
     userfile << inOrder;
     userfile.close();
 }
 
-void printPreorder(struct Node *root, int depth, int check){
+void printPreorder(struct Node *root, int depth){
 
     ofstream userfile((ogname + ".preorder").c_str());
 
     if(root != NULL){
         preOrder += string(2*(depth), '-') + root->data + "\n";
-        printPreorder(root->left, depth+1, 1);
-        printPreorder(root->right, depth+1, 1);
+        printPreorder(root->left, depth+1);
+        printPreorder(root->right, depth+1);
     }
     userfile << preOrder;
     userfile.close();
 }
 
-void printPostorder(struct Node *root, int depth, int check){
+void printPostorder(struct Node *root, int depth){
 
         ofstream userfile((ogname + ".postorder").c_str());
 
     if(root != NULL){
-        printPostorder(root->left, depth+1, 1);
-        printPostorder(root->right, depth+1, 1);
+        printPostorder(root->left, depth+1);
+        printPostorder(root->right, depth+1);
         postOrder += string(2*(depth), '-') + root->data + "\n";
     }
     userfile << postOrder;

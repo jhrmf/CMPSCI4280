@@ -36,8 +36,8 @@ int main(int argc, char* argv[]) {
 	}
 	struct Node *root = buildTree(filename);
 
-	printPreorder(root, 0, 0);
-	printInorder(root, 0, 0);
-	printPostorder(root, 0, 0);
+	printPreorder(root, 0);
+	printInorder(root, 0);
+	printPostorder(root, 0);
 
 }
