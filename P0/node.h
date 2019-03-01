@@ -1,6 +1,7 @@
 #include <string>
 struct Node{
     std::string data;
-    Node* left;
-    Node* right;
+    struct Node *left;
+    struct Node *right;
+    int depth;
 };
