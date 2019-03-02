@@ -7,10 +7,6 @@ int main(int argc, char* argv[]) {
     std::string filename, ifnoname;                                                  // string for the name of the file,
                                                         // and a string to store keyboard entry if no string is provided
 
-    if (argc > 2) {                                              // if the user enters more than a filename, throw error
-        cout << "ERROR";
-        return 0;
-    }
     if (argc == 2) {                                   //if the user enters a filename, assign it to the string filename
         filename = argv[1];
     }
@@ -20,14 +16,15 @@ int main(int argc, char* argv[]) {
         tempfile.open("temp.sp19");                       //creates a temporary file for keyboard inputs to be stored in
         tempfile << ifnoname;
         tempfile.close();
-        filename = "temp.sp19";                                                   // sets filename to the temporary file
+        filename = "temp";                                                   // sets filename to the temporary file
     }
     if (filename.find(".sp19") != string::npos){               //checks if file someone entered has .sp19 and removes it
         filename.erase(0, filename.find(".sp19"));
     }
 
-    ifstream file((filename + ".sp19").c_str());                                      //file opened with extension .sp19
-	if(!file){                                                                  //if the file does not exit, throw error
+    ifstream file((filename + ".sp19").c_str());
+
+    if(!file){                                                                  //if the file does not exit, throw error
 		cout << "ERROR: File does not exist." << endl;
 		return 0;
 	}
@@ -36,6 +33,7 @@ int main(int argc, char* argv[]) {
 		return 0;
 	}
 	file.close();
+
 	struct Node *root = buildTree(filename);                    //call buildTree function (in tree.cpp) passing filename
 
 	printPreorder(root, 0);                               //call printPreorder (in tree.cpp) passing root and depth at 0
