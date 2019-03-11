@@ -38,6 +38,6 @@ int main(int argc, char* argv[]) {
 
 	printPreorder(root, 0);                               //call printPreorder (in tree.cpp) passing root and depth at 0
 	printInorder(root, 0);                                 //call printInorder (in tree.cpp) passing root and depth at 0
-	printPostorder(root, 0);                          //call printPostorder (in tree.cpp) passing root and depth at 0
+	printPostorder(root, 0);                             //call printPostorder (in tree.cpp) passing root and depth at 0
 
 }

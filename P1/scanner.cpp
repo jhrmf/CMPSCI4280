@@ -29,6 +29,13 @@ void scanner(std::string filename){
             }
             word = "";
         }
+        else if(read.eof()){
+            struct Token eofToken = Token();
+            eofToken.tokenInstance = word;
+            eofToken.lineCount = lineCount;
+            eofToken.tokenID = "eofToken";
+            printToken(eofToken);
+        }
         if(character == '\n'){
             lineCount++;
         }
